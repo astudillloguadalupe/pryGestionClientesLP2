@@ -47,6 +47,7 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnListar = new System.Windows.Forms.Button();
             this.mtbTotal = new System.Windows.Forms.MaskedTextBox();
+            this.btnDeudores = new System.Windows.Forms.Button();
             this.grbCarga.SuspendLayout();
             this.grbConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).BeginInit();
@@ -177,6 +178,7 @@
             this.dgvConsulta.Name = "dgvConsulta";
             this.dgvConsulta.Size = new System.Drawing.Size(458, 265);
             this.dgvConsulta.TabIndex = 7;
+            this.dgvConsulta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsulta_CellContentClick);
             // 
             // Codigo
             // 
@@ -224,11 +226,22 @@
             this.mtbTotal.Size = new System.Drawing.Size(100, 20);
             this.mtbTotal.TabIndex = 6;
             // 
+            // btnDeudores
+            // 
+            this.btnDeudores.Location = new System.Drawing.Point(263, 532);
+            this.btnDeudores.Name = "btnDeudores";
+            this.btnDeudores.Size = new System.Drawing.Size(100, 23);
+            this.btnDeudores.TabIndex = 14;
+            this.btnDeudores.Text = "Listar Deudores";
+            this.btnDeudores.UseVisualStyleBackColor = true;
+            this.btnDeudores.Click += new System.EventHandler(this.btnDeudores_Click);
+            // 
             // frmGestionClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 567);
+            this.Controls.Add(this.btnDeudores);
             this.Controls.Add(this.mtbTotal);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.lblTotal);
@@ -269,6 +282,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn limite;
         private System.Windows.Forms.DataGridViewTextBoxColumn Deuda;
+        private System.Windows.Forms.Button btnDeudores;
     }
 }
 

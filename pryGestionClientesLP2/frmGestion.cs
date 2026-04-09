@@ -39,26 +39,40 @@ namespace pryGestionClientesLP2
         {
             if (IND < Clientes.Length)
             {
+                Int32 i = 0;
+                while (Clientes[i].Codigo != Convert.ToInt32(mtbCodigo.Text) && i < IND)
+                {
+                    i++;
+                }
+                if (i == IND)
+                {
+                    Clientes[IND].Codigo = Convert.ToInt32(mtbCodigo.Text);
+                    Clientes[IND].Usuario = txtUsuario.Text;
+                    Clientes[IND].Deuda = Convert.ToDecimal(mtbDeuda.Text);
+                    Clientes[IND].Limite = Convert.ToInt32(mtbLimite.Text);
+                    IND++;
+                    Listar();
+                    MessageBox.Show("Los datos se cargaron correctamente");
+                    mtbCodigo.Text = "";
+                    mtbDeuda.Text = "";
+                    mtbLimite.Text = "";
+                    txtUsuario.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("El codigo ya existe, ingrese otro");
+                }
 
-                Clientes[IND].Codigo = Convert.ToInt32(mtbCodigo.Text);
-                Clientes[IND].Usuario = txtUsuario.Text;
-                Clientes[IND].Deuda = Convert.ToDecimal(mtbDeuda.Text);
-                Clientes[IND].Limite = Convert.ToInt32(mtbLimite.Text);
-                IND++;
-                MessageBox.Show("Los datos se cargaron correctamente");
-                mtbCodigo.Text = "";
-                mtbDeuda.Text = "";
-                mtbLimite.Text = "";
-                txtUsuario.Text = "";
+               
             }
             else
             {
                 MessageBox.Show("No se pueden Cargar mas datos");
             }
+            Listar();
         }
 
-        private void btnListar_Click(object sender, EventArgs e)
-
+        private void Listar()
         {
             Decimal Total = 0;
             dgvConsulta.Rows.Clear();
@@ -70,8 +84,18 @@ namespace pryGestionClientesLP2
             mtbTotal.Text = Total.ToString();
         }
 
-        private void comprobar()
+
+
+        private void btnListar_Click(object sender, EventArgs e)
+
         {
+            Listar();
+        }
+
+        private void comprobar()
+
+        {
+            
             if (mtbCodigo.Text != ""&& mtbDeuda.Text != ""&& mtbLimite.Text !="")
             {
                 btnCargar.Enabled = false;
@@ -93,6 +117,8 @@ namespace pryGestionClientesLP2
         private void frmGestionClientes_Load(object sender, EventArgs e)
         {
             btnCargar.Enabled = false;
+            precarga();
+            Listar();
         }
 
         private void mtbDeuda_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -109,5 +135,47 @@ namespace pryGestionClientesLP2
         {
             comprobar();
         }
+
+        private void dgvConsulta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void precarga()
+        {
+
+            Clientes[IND].Codigo = 10;
+            Clientes[IND].Usuario = "Guada";
+            Clientes[IND].Deuda = 5000;
+            Clientes[IND].Limite = 18000;
+            IND++;
+            Clientes[IND].Codigo = 30;
+            Clientes[IND].Usuario = "Lauti";
+            Clientes[IND].Deuda = 2000;
+            Clientes[IND].Limite = 16000;
+            IND++;
+            Clientes[IND].Codigo = 60;
+            Clientes[IND].Usuario = "Rafael";
+            Clientes[IND].Deuda = 6000;
+            Clientes[IND].Limite = 19000;
+            IND++;
+
+        }
+
+        private void btnDeudores_Click(object sender, EventArgs e)
+        {
+            Decimal Total = 0;
+            dgvConsulta.Rows.Clear();
+            for (Int32 i = 0; i < IND; i++)
+            {
+                if (Clientes[i].Deuda > 0)
+                {
+                    dgvConsulta.Rows.Add(Clientes[i].Codigo, Clientes[i].Usuario, Clientes[i].Limite, Clientes[i].Deuda);
+                    Total = Total += Clientes[i].Deuda;
+                }
+             
+            }
+            mtbTotal.Text = Total.ToString();
+        }
     }
+    
 }
