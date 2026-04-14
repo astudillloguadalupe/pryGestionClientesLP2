@@ -68,6 +68,7 @@
             this.btnListar.TabIndex = 0;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // dgvlistado
             // 
@@ -154,6 +155,7 @@
             this.Name = "frmListadoOrdenado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado Ordenado";
+            this.Load += new System.EventHandler(this.frmListadoOrdenado_Load);
             this.grpConultaDatos.ResumeLayout(false);
             this.grpConultaDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).EndInit();

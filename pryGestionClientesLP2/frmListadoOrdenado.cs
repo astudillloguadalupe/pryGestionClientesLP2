@@ -33,5 +33,22 @@ namespace pryGestionClientesLP2
                 btnListar.Enabled = false;
             }
         }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            cmbCampo.SelectedIndex = -1;
+            cmbModo.SelectedIndex = -1;
+        }
+
+        private void frmListadoOrdenado_Load(object sender, EventArgs e)
+        {
+            cmbCampo.Items.Add("Còdigo");
+            cmbCampo.Items.Add("Nombre");
+            cmbCampo.Items.Add("Limite Crèdito");
+            cmbCampo.Items.Add("Deuda");
+
+            cmbModo.Items.Add("Ascendente");
+            cmbModo.Items.Add("Descendente");
+        }
     }
 }
