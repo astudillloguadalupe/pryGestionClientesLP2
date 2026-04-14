@@ -21,7 +21,7 @@ namespace pryGestionClientesLP2
         static public RegClientes[] Clientes = new RegClientes[10];
         //Declaracion indice
 
-        static public Int32 I = 0;
+        static public Int32 IND = 0; 
 
     }
 }

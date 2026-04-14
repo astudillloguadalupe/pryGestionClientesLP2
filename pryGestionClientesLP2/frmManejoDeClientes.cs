@@ -10,11 +10,29 @@ using System.Windows.Forms;
 
 namespace pryGestionClientesLP2
 {
-    public partial class frmManejoDeClientes : Form
+    public partial class frmPrincipal : Form
     {
-        public frmManejoDeClientes()
+        public frmPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void agregarNuevosClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmGestionClientes();
+            formulario.Show();
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listadoDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmListadoOrdenado();
+          
+            formulario.Show();
         }
     }
 }

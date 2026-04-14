@@ -52,6 +52,12 @@
     <Compile Include="frmGestion.Designer.cs">
       <DependentUpon>frmGestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListadoOrdenado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadoOrdenado.Designer.cs">
+      <DependentUpon>frmListadoOrdenado.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmManejoDeClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     <Compile Include="Vectores.cs" />
     <EmbeddedResource Include="frmGestion.resx">
       <DependentUpon>frmGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoOrdenado.resx">
+      <DependentUpon>frmListadoOrdenado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManejoDeClientes.resx">
       <DependentUpon>frmManejoDeClientes.cs</DependentUpon>
