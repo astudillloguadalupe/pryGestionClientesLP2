@@ -40,14 +40,14 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.grbConsulta = new System.Windows.Forms.GroupBox();
             this.dgvConsulta = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.limite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Deuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnListar = new System.Windows.Forms.Button();
             this.mtbTotal = new System.Windows.Forms.MaskedTextBox();
             this.btnDeudores = new System.Windows.Forms.Button();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.limite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Deuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbCarga.SuspendLayout();
             this.grbConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).BeginInit();
@@ -180,26 +180,6 @@
             this.dgvConsulta.TabIndex = 7;
             this.dgvConsulta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsulta_CellContentClick);
             // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            // 
-            // Usuario
-            // 
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            // 
-            // limite
-            // 
-            this.limite.HeaderText = "Limite de Credito";
-            this.limite.Name = "limite";
-            // 
-            // Deuda
-            // 
-            this.Deuda.HeaderText = "Deuda";
-            this.Deuda.Name = "Deuda";
-            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
@@ -235,6 +215,28 @@
             this.btnDeudores.Text = "Listar Deudores";
             this.btnDeudores.UseVisualStyleBackColor = true;
             this.btnDeudores.Click += new System.EventHandler(this.btnDeudores_Click);
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.Width = 80;
+            // 
+            // Usuario
+            // 
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.Name = "Usuario";
+            this.Usuario.Width = 150;
+            // 
+            // limite
+            // 
+            this.limite.HeaderText = "Limite de Credito";
+            this.limite.Name = "limite";
+            // 
+            // Deuda
+            // 
+            this.Deuda.HeaderText = "Deuda";
+            this.Deuda.Name = "Deuda";
             // 
             // frmGestionClientes
             // 
@@ -278,11 +280,11 @@
         private System.Windows.Forms.MaskedTextBox mtbCodigo;
         private System.Windows.Forms.MaskedTextBox mtbTotal;
         private System.Windows.Forms.DataGridView dgvConsulta;
+        private System.Windows.Forms.Button btnDeudores;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn limite;
         private System.Windows.Forms.DataGridViewTextBoxColumn Deuda;
-        private System.Windows.Forms.Button btnDeudores;
     }
 }
 

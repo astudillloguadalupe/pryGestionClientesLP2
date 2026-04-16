@@ -36,12 +36,60 @@ namespace pryGestionClientesLP2
 
         private void btnListar_Click(object sender, EventArgs e)
         {
+            switch (cmbCampo.SelectedIndex)
+            {
+                case 0:
+                    if (cmbModo.SelectedIndex == 0)
+                    {
+                        Vectores.OrdenarPorCodigoAscendente();
+;                   }
+                    else
+                    {
+                        Vectores.OrdenarPorCodigoDescendente();
+
+                    }
+                    break;
+                case 1:
+                    if (cmbModo.SelectedIndex == 0)
+                    {
+                        Vectores.OrdenarPorNombreAscendente();
+
+                    }
+                    else
+                    {
+                        Vectores.OrdenarPorNombreDescendente();
+                    }
+                    break;
+                case 2:
+
+                    if (cmbModo.SelectedIndex == 0)
+                    {
+                        Vectores.OrdenarPorLimiteAscendente();
+                    }
+                    else
+                    {
+                        Vectores.OrdenarPorLimiteDescendente();
+                    }
+                    break;
+                case 3:
+                    if (cmbModo.SelectedIndex == 0)
+                    {
+                        Vectores.OrdenarPorDeudaAscendente();
+                    }
+                    else
+                    {
+                       Vectores.OrdenarPorDeudaDescendente();
+                    }
+                    break;
+            }
+
             cmbCampo.SelectedIndex = -1;
             cmbModo.SelectedIndex = -1;
         }
 
         private void frmListadoOrdenado_Load(object sender, EventArgs e)
         {
+            Vectores.precarga();
             cmbCampo.Items.Add("Còdigo");
             cmbCampo.Items.Add("Nombre");
             cmbCampo.Items.Add("Limite Crèdito");
@@ -49,6 +97,9 @@ namespace pryGestionClientesLP2
 
             cmbModo.Items.Add("Ascendente");
             cmbModo.Items.Add("Descendente");
+
+           
+
         }
     }
 }

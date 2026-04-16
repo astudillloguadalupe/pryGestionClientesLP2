@@ -140,24 +140,24 @@ namespace pryGestionClientesLP2
         {
 
         }
-        private void precarga()
+        static public void precarga()
         {
 
-            Clientes[IND].Codigo = 10;
-            Clientes[IND].Usuario = "Guada";
-            Clientes[IND].Deuda = 5000;
-            Clientes[IND].Limite = 18000;
-            IND++;
-            Clientes[IND].Codigo = 30;
-            Clientes[IND].Usuario = "Lauti";
-            Clientes[IND].Deuda = 2000;
-            Clientes[IND].Limite = 16000;
-            IND++;
-            Clientes[IND].Codigo = 60;
-            Clientes[IND].Usuario = "Rafael";
-            Clientes[IND].Deuda = 6000;
-            Clientes[IND].Limite = 19000;
-            IND++;
+            Vectores.Clientes[Vectores.IND].Codigo = 10;
+            Vectores.Clientes[Vectores.IND].Nombre = "Guada";
+            Vectores.Clientes[Vectores.IND].Deuda = 5000;
+            Vectores.Clientes[Vectores.IND].Limite = 18000;
+            Vectores.IND++;
+            Vectores.Clientes[Vectores.IND].Codigo = 30;
+            Vectores.Clientes[Vectores.IND].Nombre = "Lauti";
+            Vectores.Clientes[Vectores.IND].Deuda = 2000;
+            Vectores.Clientes[Vectores.IND].Limite = 16000;
+            Vectores.IND++;
+            Vectores.Clientes[Vectores.IND].Codigo = 60;
+            Vectores.Clientes[Vectores.IND].Nombre = "Rafael";
+            Vectores.Clientes[Vectores.IND].Deuda = 6000;
+            Vectores.Clientes[Vectores.IND].Limite = 19000;
+            Vectores.IND++;
 
         }
 

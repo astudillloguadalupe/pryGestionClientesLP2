@@ -34,5 +34,15 @@ namespace pryGestionClientesLP2
           
             formulario.Show();
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           this.Close();
+        }
+
+        private void listadoClientesOrdenadosPorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
