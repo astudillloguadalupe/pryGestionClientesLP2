@@ -13,10 +13,15 @@ namespace pryGestionClientesLP2
         {
             public Int32 Codigo;
             public string Nombre;
-            public Int32 Deuda;
-            public Int32 Limite;
+            public Decimal Deuda;
+            public Decimal Limite;
         };
 
+        //Declaración de un vector de tipo RegClientes
+        static public RegClientes[] Clientes = new RegClientes[10];
+        //Declaracion indice
+
+        static public Int32 IND = 0;
 
         static public void precarga()
         {
@@ -38,18 +43,9 @@ namespace pryGestionClientesLP2
 
         }
 
-        //Declaración de un vector de tipo RegClientes
-        static public RegClientes[] Clientes = new RegClientes[10];
-        //Declaracion indice
-
-
-
-        static public Int32 IND = 0;
-
         
         static public void OrdenarPorCodigoAscendente()
         {
-
 
             Int32 c = 0;
             Int32 i = 0;
@@ -57,13 +53,13 @@ namespace pryGestionClientesLP2
 
             while (c < IND - 1)
             {
-                i = 0;
-
+                i =0;
+                
                 while (i < IND - 1)
                 {
                     if (Clientes[i].Codigo >  Clientes[i + 1].Codigo)
                     {
-                        Aux = Clientes[i];
+                        Aux = Clientes[i];//Llevo el registro completo con los 4 campos a variable auxiliar
                         Clientes[i] = Clientes[i + 1];
                         Clientes[i + 1] = Aux;
                     }
@@ -79,9 +75,9 @@ namespace pryGestionClientesLP2
             Int32 c = 0;
             Int32 i = 0;
             RegClientes Aux;
-
             while (c < IND - 1)
             {
+         
                 i = 0;
 
                 while (i < IND - 1)
@@ -127,11 +123,9 @@ namespace pryGestionClientesLP2
             Int32 c = 0;
             Int32 i = 0;
             RegClientes Aux;
-
             while (c < IND - 1)
             {
                 i = 0;
-
                 while (i < IND - 1)
                 {
                     if (Clientes[i].Nombre.CompareTo(Clientes[i + 1].Nombre) < 0)
@@ -146,19 +140,23 @@ namespace pryGestionClientesLP2
             }
         }
 
+        private static object CompareTo(object value)
+        {
+            throw new NotImplementedException();
+        }
+
         static public void OrdenarPorLimiteAscendente()
         {
             Int32 c = 0;
             Int32 i = 0;
             RegClientes Aux;
-
             while (c < IND - 1)
             {
+        
                 i = 0;
-
                 while (i < IND - 1)
                 {
-                    if (Clientes[i].Limite > Clientes[i + 1].Codigo)
+                    if (Clientes[i].Limite.CompareTo(Clientes[i + 1].Limite) > 0)
                     {
                         Aux = Clientes[i];
                         Clientes[i] = Clientes[i + 1];
@@ -175,14 +173,14 @@ namespace pryGestionClientesLP2
             Int32 c = 0;
             Int32 i = 0;
             RegClientes Aux;
-
             while (c < IND - 1)
             {
+                
                 i = 0;
 
                 while (i < IND - 1)
                 {
-                    if (Clientes[i].Limite < Clientes[i + 1].Codigo)
+                    if (Clientes[i].Limite.CompareTo(Clientes[i + 1].Limite) < 0)
                     {
                         Aux = Clientes[i];
                         Clientes[i] = Clientes[i + 1];
@@ -193,6 +191,32 @@ namespace pryGestionClientesLP2
                 c++;
             }
         }
+
+        
+        static public void OrdenarPorDeudaAscendente()
+        {
+            Int32 c = 0;
+            Int32 i = 0;
+            RegClientes Aux;
+            while (c < IND - 1)
+            {
+            
+                i = 0;
+
+                while (i < IND - 1)
+                {
+                    if (Clientes[i].Deuda.CompareTo(Clientes[i + 1].Deuda) > 0)
+                    {
+                        Aux = Clientes[i];
+                        Clientes[i] = Clientes[i + 1];
+                        Clientes[i + 1] = Aux;
+                    }
+                    i++;
+                }
+                c++;
+            }
+        }
+
 
         static public void OrdenarPorDeudaDescendente()
         {
@@ -206,30 +230,7 @@ namespace pryGestionClientesLP2
 
                 while (i < IND - 1)
                 {
-                    if (Clientes[i].Deuda < Clientes[i + 1].Codigo)
-                    {
-                        Aux = Clientes[i];
-                        Clientes[i] = Clientes[i + 1];
-                        Clientes[i + 1] = Aux;
-                    }
-                    i++;
-                }
-                c++;
-            }
-        }
-        static public void OrdenarPorDeudaAscendente()
-        {
-            Int32 c = 0;
-            Int32 i = 0;
-            RegClientes Aux;
-
-            while (c < IND - 1)
-            {
-                i = 0;
-
-                while (i < IND - 1)
-                {
-                    if (Clientes[i].Deuda > Clientes[i + 1].Codigo)
+                    if (Clientes[i].Deuda.CompareTo(Clientes[i + 1].Deuda) < 0)
                     {
                         Aux = Clientes[i];
                         Clientes[i] = Clientes[i + 1];

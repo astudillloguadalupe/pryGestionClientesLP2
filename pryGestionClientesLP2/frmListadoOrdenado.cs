@@ -24,14 +24,7 @@ namespace pryGestionClientesLP2
 
         private void cmbCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbCampo.SelectedIndex != -1)
-            {
-                btnListar.Enabled = true;
-            }
-            else
-            {
-                btnListar.Enabled = false;
-            }
+
         }
 
         private void btnListar_Click(object sender, EventArgs e)
@@ -81,15 +74,20 @@ namespace pryGestionClientesLP2
                        Vectores.OrdenarPorDeudaDescendente();
                     }
                     break;
-            }
 
-            cmbCampo.SelectedIndex = -1;
-            cmbModo.SelectedIndex = -1;
+            }
+            dgvlistado.Rows.Clear();
+            for (Int32 i = 0; i < Vectores.IND; i++)
+            {
+                dgvlistado.Rows.Add(Vectores.Clientes[i].Codigo, Vectores.Clientes[i].Nombre, Vectores.Clientes[i].Limite, Vectores.Clientes[i].Deuda);
+            }
+            
         }
 
         private void frmListadoOrdenado_Load(object sender, EventArgs e)
         {
             Vectores.precarga();
+
             cmbCampo.Items.Add("Còdigo");
             cmbCampo.Items.Add("Nombre");
             cmbCampo.Items.Add("Limite Crèdito");
@@ -97,9 +95,6 @@ namespace pryGestionClientesLP2
 
             cmbModo.Items.Add("Ascendente");
             cmbModo.Items.Add("Descendente");
-
-           
-
         }
     }
 }
