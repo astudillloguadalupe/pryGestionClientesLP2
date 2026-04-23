@@ -30,7 +30,7 @@ namespace pryGestionClientesLP2
 
         private void listadoDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formulario = new frmListadoOrdenado();
+            Form formulario = new frmListadoClientes();
           
             formulario.Show();
         }
@@ -42,7 +42,15 @@ namespace pryGestionClientesLP2
 
         private void listadoClientesOrdenadosPorToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Form formulario = new frmListadoOrdenado();
+            formulario.Show();
+        }
 
+        private void listadoDeClientesDeudoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmClientesDeudores();
+            formulario.Show();
+                
         }
     }
 }

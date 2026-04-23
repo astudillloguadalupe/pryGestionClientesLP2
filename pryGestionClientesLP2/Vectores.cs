@@ -12,7 +12,7 @@ namespace pryGestionClientesLP2
         public struct RegClientes
         {
             public Int32 Codigo;
-            public string Nombre;
+            public string Usuario;
             public Decimal Deuda;
             public Decimal Limite;
         };
@@ -26,17 +26,17 @@ namespace pryGestionClientesLP2
         static public void precarga()
         {
             Clientes[IND].Codigo = 10;
-            Clientes[IND].Nombre = "Guada";
+            Clientes[IND].Usuario = "Guada";
             Clientes[IND].Deuda = 5000;
             Clientes[IND].Limite = 18000;
             IND++;
             Clientes[IND].Codigo = 30;
-            Clientes[IND].Nombre = "Lauti";
+            Clientes[IND].Usuario = "Lauti";
             Clientes[IND].Deuda = 2000;
             Clientes[IND].Limite = 16000;
             IND++;
             Clientes[IND].Codigo = 60;
-            Clientes[IND].Nombre = "Rafael";
+            Clientes[IND].Usuario = "Rafael";
             Clientes[IND].Deuda = 6000;
             Clientes[IND].Limite = 19000;
             IND++;
@@ -106,7 +106,7 @@ namespace pryGestionClientesLP2
 
                 while (i < IND - 1)
                 {
-                    if (Clientes[i].Nombre.CompareTo (Clientes[i + 1].Nombre) > 0)
+                    if (Clientes[i].Usuario.CompareTo (Clientes[i + 1].Usuario) > 0)
                     {
                         Aux = Clientes[i];
                         Clientes[i] = Clientes[i + 1];
@@ -128,7 +128,7 @@ namespace pryGestionClientesLP2
                 i = 0;
                 while (i < IND - 1)
                 {
-                    if (Clientes[i].Nombre.CompareTo(Clientes[i + 1].Nombre) < 0)
+                    if (Clientes[i].Usuario.CompareTo(Clientes[i + 1].Usuario) < 0)
                     {
                         Aux = Clientes[i];
                         Clientes[i] = Clientes[i + 1];

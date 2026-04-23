@@ -37,144 +37,101 @@ namespace pryGestionClientesLP2
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            if (IND < Clientes.Length)
+            if (Vectores.IND < Vectores.Clientes.Length)
             {
-                Int32 i = 0;
-                while (Clientes[i].Codigo != Convert.ToInt32(mtbCodigo.Text) && i < IND)
+                int i = 0;
+        
+                while (Vectores.Clientes[i].Codigo != Convert.ToInt32(txtCodigo.Text) && i < Vectores.IND)
                 {
                     i++;
                 }
-                if (i == IND)
+                if (i == Vectores.IND)
                 {
-                    Clientes[IND].Codigo = Convert.ToInt32(mtbCodigo.Text);
-                    Clientes[IND].Usuario = txtUsuario.Text;
-                    Clientes[IND].Deuda = Convert.ToDecimal(mtbDeuda.Text);
-                    Clientes[IND].Limite = Convert.ToInt32(mtbLimite.Text);
+                    Vectores.Clientes[Vectores.IND].Codigo = Convert.ToInt32(txtCodigo.Text);
+                    Vectores.Clientes[Vectores.IND].Usuario = txtUsuario.Text;
+                    Vectores.Clientes[Vectores.IND].Deuda = Convert.ToDecimal(txtDeuda.Text);
+                    Vectores.Clientes[Vectores.IND].Limite = Convert.ToInt32(txtLimite.Text);
                     IND++;
-                    Listar();
+                    
                     MessageBox.Show("Los datos se cargaron correctamente");
-                    mtbCodigo.Text = "";
-                    mtbDeuda.Text = "";
-                    mtbLimite.Text = "";
+                    txtCodigo.Text = "";
+                    txtDeuda.Text = "";
+                    txtLimite.Text = "";
                     txtUsuario.Text = "";
                 }
                 else
                 {
                     MessageBox.Show("El codigo ya existe, ingrese otro");
+                    txtCodigo.Text = "";
                 }
 
-               
             }
             else
             {
                 MessageBox.Show("No se pueden Cargar mas datos");
             }
-            Listar();
+          
         }
 
-        private void Listar()
-        {
-            Decimal Total = 0;
-            dgvConsulta.Rows.Clear();
-            for (int i = 0; i < IND; i++)
-            {
-                dgvConsulta.Rows.Add(Clientes[i].Codigo, Clientes[i].Usuario, Clientes[i].Limite, Clientes[i].Deuda);
-                Total = Total += Clientes[i].Deuda;
-            }
-            mtbTotal.Text = Total.ToString();
-        }
-
-
-
-        private void btnListar_Click(object sender, EventArgs e)
-
-        {
-            Listar();
-        }
+       
 
         private void comprobar()
 
         {
             
-            if (mtbCodigo.Text != ""&& mtbDeuda.Text != ""&& mtbLimite.Text !="")
+            if (txtCodigo.Text != "" && txtUsuario.Text != "" && txtDeuda.Text != "" && txtLimite.Text != "")
             {
-                btnCargar.Enabled = false;
+                btnCargar.Enabled = true;
 
             }
             else
             {
-                btnCargar.Enabled=true;
+                btnCargar.Enabled=false;
             }
                
         }
 
 
-        private void mtbCodigo_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-            comprobar();
-        }
-
         private void frmGestionClientes_Load(object sender, EventArgs e)
         {
             btnCargar.Enabled = false;
-            precarga();
-            Listar();
+
         }
 
-        private void mtbDeuda_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-            comprobar();
-        }
+      
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
             comprobar();
         }
 
-        private void mtbLimite_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-            comprobar();
-        }
+       
+       
 
         private void dgvConsulta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-        static public void precarga()
-        {
-
-            Vectores.Clientes[Vectores.IND].Codigo = 10;
-            Vectores.Clientes[Vectores.IND].Nombre = "Guada";
-            Vectores.Clientes[Vectores.IND].Deuda = 5000;
-            Vectores.Clientes[Vectores.IND].Limite = 18000;
-            Vectores.IND++;
-            Vectores.Clientes[Vectores.IND].Codigo = 30;
-            Vectores.Clientes[Vectores.IND].Nombre = "Lauti";
-            Vectores.Clientes[Vectores.IND].Deuda = 2000;
-            Vectores.Clientes[Vectores.IND].Limite = 16000;
-            Vectores.IND++;
-            Vectores.Clientes[Vectores.IND].Codigo = 60;
-            Vectores.Clientes[Vectores.IND].Nombre = "Rafael";
-            Vectores.Clientes[Vectores.IND].Deuda = 6000;
-            Vectores.Clientes[Vectores.IND].Limite = 19000;
-            Vectores.IND++;
-
-        }
+       
 
         private void btnDeudores_Click(object sender, EventArgs e)
         {
-            Decimal Total = 0;
-            dgvConsulta.Rows.Clear();
-            for (Int32 i = 0; i < IND; i++)
-            {
-                if (Clientes[i].Deuda > 0)
-                {
-                    dgvConsulta.Rows.Add(Clientes[i].Codigo, Clientes[i].Usuario, Clientes[i].Limite, Clientes[i].Deuda);
-                    Total = Total += Clientes[i].Deuda;
-                }
-             
-            }
-            mtbTotal.Text = Total.ToString();
+            
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            comprobar();
+        }
+
+        private void txtLimite_TextChanged(object sender, EventArgs e)
+        {
+            comprobar();
+        }
+
+        private void txtDeuda_TextChanged(object sender, EventArgs e)
+        {
+            comprobar();
         }
     }
     

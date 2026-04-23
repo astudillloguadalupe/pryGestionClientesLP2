@@ -35,14 +35,14 @@
             this.lblTotDeuda = new System.Windows.Forms.Label();
             this.lblCant = new System.Windows.Forms.Label();
             this.lblPromedio = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvConsulta = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Limite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnListarDeudores = new System.Windows.Forms.Button();
             this.grpConsultaDatos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).BeginInit();
             this.SuspendLayout();
             // 
             // grpConsultaDatos
@@ -53,7 +53,7 @@
             this.grpConsultaDatos.Controls.Add(this.lblTotDeuda);
             this.grpConsultaDatos.Controls.Add(this.lblCant);
             this.grpConsultaDatos.Controls.Add(this.lblPromedio);
-            this.grpConsultaDatos.Controls.Add(this.dataGridView1);
+            this.grpConsultaDatos.Controls.Add(this.dgvConsulta);
             this.grpConsultaDatos.Location = new System.Drawing.Point(12, 12);
             this.grpConsultaDatos.Name = "grpConsultaDatos";
             this.grpConsultaDatos.Size = new System.Drawing.Size(460, 477);
@@ -112,18 +112,18 @@
             this.lblPromedio.TabIndex = 1;
             this.lblPromedio.Text = "Promedio de deuda:";
             // 
-            // dataGridView1
+            // dgvConsulta
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsulta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.NombreApellido,
             this.Limite,
             this.deuda});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(448, 328);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvConsulta.Location = new System.Drawing.Point(6, 19);
+            this.dgvConsulta.Name = "dgvConsulta";
+            this.dgvConsulta.Size = new System.Drawing.Size(448, 328);
+            this.dgvConsulta.TabIndex = 0;
             // 
             // Codigo
             // 
@@ -159,6 +159,7 @@
             this.btnListarDeudores.TabIndex = 2;
             this.btnListarDeudores.Text = "Listar Deudores";
             this.btnListarDeudores.UseVisualStyleBackColor = true;
+            this.btnListarDeudores.Click += new System.EventHandler(this.btnListarDeudores_Click);
             // 
             // frmClientesDeudores
             // 
@@ -169,9 +170,10 @@
             this.Controls.Add(this.grpConsultaDatos);
             this.Name = "frmClientesDeudores";
             this.Text = "Clientes Deudores";
+            this.Load += new System.EventHandler(this.frmClientesDeudores_Load);
             this.grpConsultaDatos.ResumeLayout(false);
             this.grpConsultaDatos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -185,7 +187,7 @@
         private System.Windows.Forms.Label lblTotDeuda;
         private System.Windows.Forms.Label lblCant;
         private System.Windows.Forms.Label lblPromedio;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvConsulta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Limite;
