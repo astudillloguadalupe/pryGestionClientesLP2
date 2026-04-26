@@ -23,25 +23,7 @@ namespace pryGestionClientesLP2
 
         static public Int32 IND = 0;
 
-        static public void precarga()
-        {
-            Clientes[IND].Codigo = 10;
-            Clientes[IND].Usuario = "Guada";
-            Clientes[IND].Deuda = 5000;
-            Clientes[IND].Limite = 18000;
-            IND++;
-            Clientes[IND].Codigo = 30;
-            Clientes[IND].Usuario = "Lauti";
-            Clientes[IND].Deuda = 2000;
-            Clientes[IND].Limite = 16000;
-            IND++;
-            Clientes[IND].Codigo = 60;
-            Clientes[IND].Usuario = "Rafael";
-            Clientes[IND].Deuda = 6000;
-            Clientes[IND].Limite = 19000;
-            IND++;
-
-        }
+        
 
         
         static public void OrdenarPorCodigoAscendente()

@@ -64,7 +64,7 @@
             this.txtDeuda.Location = new System.Drawing.Point(84, 64);
             this.txtDeuda.Name = "txtDeuda";
             this.txtDeuda.Size = new System.Drawing.Size(100, 20);
-            this.txtDeuda.TabIndex = 16;
+            this.txtDeuda.TabIndex = 2;
             this.txtDeuda.TextChanged += new System.EventHandler(this.txtDeuda_TextChanged);
             // 
             // txtLimite
@@ -72,7 +72,7 @@
             this.txtLimite.Location = new System.Drawing.Point(341, 68);
             this.txtLimite.Name = "txtLimite";
             this.txtLimite.Size = new System.Drawing.Size(123, 20);
-            this.txtLimite.TabIndex = 15;
+            this.txtLimite.TabIndex = 3;
             this.txtLimite.TextChanged += new System.EventHandler(this.txtLimite_TextChanged);
             // 
             // txtCodigo
@@ -80,7 +80,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(84, 18);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo.TabIndex = 14;
+            this.txtCodigo.TabIndex = 0;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // txtUsuario
@@ -88,7 +88,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(341, 29);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(123, 20);
-            this.txtUsuario.TabIndex = 10;
+            this.txtUsuario.TabIndex = 1;
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // btnCargar
@@ -97,7 +97,7 @@
             this.btnCargar.Location = new System.Drawing.Point(333, 110);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(108, 29);
-            this.btnCargar.TabIndex = 6;
+            this.btnCargar.TabIndex = 4;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = true;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
@@ -142,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 184);
+            this.ClientSize = new System.Drawing.Size(494, 183);
             this.Controls.Add(this.grbCarga);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmGestionClientes";

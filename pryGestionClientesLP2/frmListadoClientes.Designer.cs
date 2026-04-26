@@ -60,7 +60,7 @@
             this.grpConsultaDatos.TabIndex = 0;
             this.grpConsultaDatos.TabStop = false;
             this.grpConsultaDatos.Text = "Consulta de Datos ";
-            this.grpConsultaDatos.Enter += new System.EventHandler(this.grpConsultaDatos_Enter);
+            //this.grpConsultaDatos.Enter += new System.EventHandler(this.grpConsultaDatos_Enter);
             // 
             // lblPromedioRTA
             // 
@@ -85,7 +85,7 @@
             this.lblCantidadRTA.Name = "lblCantidadRTA";
             this.lblCantidadRTA.Size = new System.Drawing.Size(100, 23);
             this.lblCantidadRTA.TabIndex = 4;
-            this.lblCantidadRTA.Click += new System.EventHandler(this.label4_Click);
+            //this.lblCantidadRTA.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblTotDeuda
             // 

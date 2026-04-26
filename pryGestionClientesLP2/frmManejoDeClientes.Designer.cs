@@ -79,9 +79,9 @@
             // 
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarNuevosClientesToolStripMenuItem,
-            this.listadoDeClientesToolStripMenuItem,
+            this.listadoClientesOrdenadosPorToolStripMenuItem,
             this.listadoDeClientesDeudoresToolStripMenuItem,
-            this.listadoClientesOrdenadosPorToolStripMenuItem});
+            this.listadoDeClientesToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.clientesToolStripMenuItem.Text = "Clientes";
@@ -124,6 +124,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::pryGestionClientesLP2.Properties.Resources.black_und_purple_wallpaper;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip2);
             this.MinimizeBox = false;

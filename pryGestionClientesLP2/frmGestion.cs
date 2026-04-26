@@ -31,17 +31,14 @@ namespace pryGestionClientesLP2
         //Declaracion del Vector
         private RegCli[] Clientes = new RegCli[10];
 
-        //Declaracion del inidice
-        private Int32 IND = 0;
-
-
         private void btnCargar_Click(object sender, EventArgs e)
         {
             if (Vectores.IND < Vectores.Clientes.Length)
             {
-                int i = 0;
-        
-                while (Vectores.Clientes[i].Codigo != Convert.ToInt32(txtCodigo.Text) && i < Vectores.IND)
+                Int32 i = 0;
+                Int32 codigoBuscado = Convert.ToInt32(txtCodigo.Text);
+
+                while ((i < Vectores.IND && Vectores.Clientes[i].Codigo != codigoBuscado))
                 {
                     i++;
                 }
@@ -51,7 +48,7 @@ namespace pryGestionClientesLP2
                     Vectores.Clientes[Vectores.IND].Usuario = txtUsuario.Text;
                     Vectores.Clientes[Vectores.IND].Deuda = Convert.ToDecimal(txtDeuda.Text);
                     Vectores.Clientes[Vectores.IND].Limite = Convert.ToInt32(txtLimite.Text);
-                    IND++;
+                    Vectores.IND++;
                     
                     MessageBox.Show("Los datos se cargaron correctamente");
                     txtCodigo.Text = "";
@@ -61,7 +58,7 @@ namespace pryGestionClientesLP2
                 }
                 else
                 {
-                    MessageBox.Show("El codigo ya existe, ingrese otro");
+                    MessageBox.Show("El codigo ya existe, ingrese uno nuevo");
                     txtCodigo.Text = "";
                 }
 
@@ -73,7 +70,6 @@ namespace pryGestionClientesLP2
           
         }
 
-       
 
         private void comprobar()
 
@@ -98,22 +94,13 @@ namespace pryGestionClientesLP2
 
         }
 
-      
-
+    
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
             comprobar();
         }
 
-       
-       
-
-        private void dgvConsulta_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-       
-
+    
         private void btnDeudores_Click(object sender, EventArgs e)
         {
             
@@ -121,6 +108,7 @@ namespace pryGestionClientesLP2
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
+         
             comprobar();
         }
 

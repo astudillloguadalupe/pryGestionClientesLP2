@@ -19,16 +19,14 @@ namespace pryGestionClientesLP2
 
         private void frmClientesDeudores_Load(object sender, EventArgs e)
         {
-           
-            Vectores.precarga();
-            
+       
         }
 
         private void Listar()
         {
-            Decimal Total = 0;
+            decimal Total = 0;
             int Cant = 0;
-            Decimal promedio = 0;
+            decimal promedio = 0;
             dgvConsulta.Rows.Clear();
             for (int i = 0; i < Vectores.IND; i++)
                 // Clientes con deuda
@@ -46,9 +44,9 @@ namespace pryGestionClientesLP2
             {
                 promedio = Total / Cant;
             }
-            lblTotalDeudaRTA.Text = Total.ToString();
+            lblTotalDeudaRTA.Text = Total.ToString("C");
             lblCantidadRTA.Text = Cant.ToString();
-            lblPromedioRTA.Text = promedio.ToString();
+            lblPromedioRTA.Text = promedio.ToString("C");
         }
 
         private void btnListarDeudores_Click(object sender, EventArgs e)
