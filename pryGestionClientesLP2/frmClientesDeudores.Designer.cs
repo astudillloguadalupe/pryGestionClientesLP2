@@ -169,6 +169,7 @@
             this.Controls.Add(this.btnListarDeudores);
             this.Controls.Add(this.grpConsultaDatos);
             this.Name = "frmClientesDeudores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes Deudores";
             this.Load += new System.EventHandler(this.frmClientesDeudores_Load);
             this.grpConsultaDatos.ResumeLayout(false);
